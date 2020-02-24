@@ -110,8 +110,18 @@ def ChequeWriter(str_dollar, str_cent):
     return dollar_Eng + cent_Eng
 
 
+def my_ut():
+    number_list=[]
+    word_list=[]
+    for (number,word) in zip(number_list,word_list):
+        if word == ChequeWriter(number[:-3], number[-2:]):
+            print("Pass")
+        else:
+            print("Fail")
+
 if __name__ == "__main__":
     monetary_val = input("Please input a monetary value (Format - *.**): ")
     s_dollar = monetary_val[0:len(monetary_val) - 3]
     s_cent = monetary_val[len(monetary_val) - 2:]
     print(ChequeWriter(s_dollar, s_cent))
+    my_ut()
